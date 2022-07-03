@@ -1,0 +1,265 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:root {
+  /* Fluid type scale */
+  --step--7: clamp(0.25rem, calc(0.29rem + -0.06vw), 0.28rem);
+  --step--6: clamp(0.31rem, calc(0.34rem + -0.05vw), 0.34rem);
+  --step--5: clamp(0.39rem, calc(0.41rem + -0.02vw), 0.4rem);
+  --step--4: clamp(0.48rem, calc(0.48rem + 0.01vw), 0.49rem);
+  --step--3: clamp(0.58rem, calc(0.57rem + 0.06vw), 0.61rem);
+  --step--2: clamp(0.69rem, calc(0.67rem + 0.13vw), 0.76rem);
+  --step--1: clamp(0.83rem, calc(0.79rem + 0.23vw), 0.95rem);
+  --step-0: clamp(1rem, calc(0.93rem + 0.37vw), 1.19rem);
+  --step-1: clamp(1.2rem, calc(1.09rem + 0.55vw), 1.48rem);
+  --step-2: clamp(1.44rem, calc(1.28rem + 0.81vw), 1.86rem);
+  --step-3: clamp(1.73rem, calc(1.5rem + 1.15vw), 2.32rem);
+  --step-4: clamp(2.07rem, calc(1.75rem + 1.61vw), 2.9rem);
+  --step-5: clamp(2.49rem, calc(2.04rem + 2.22vw), 3.62rem);
+  --step-6: clamp(2.99rem, calc(2.38rem + 3.01vw), 4.53rem);
+  --step-7: clamp(3.58rem, calc(2.77rem + 4.06vw), 5.66rem);
+
+  /* Fluid spacing */
+  --space-3xs: clamp(0.25rem, calc(0.23rem + 0.12vw), 0.31rem);
+  --space-2xs: clamp(0.5rem, calc(0.45rem + 0.24vw), 0.63rem);
+  --space-xs: clamp(0.75rem, calc(0.7rem + 0.24vw), 0.88rem);
+  --space-s: clamp(1rem, calc(0.93rem + 0.37vw), 1.19rem);
+  --space-m: clamp(1.5rem, calc(1.38rem + 0.61vw), 1.81rem);
+  --space-l: clamp(2rem, calc(1.85rem + 0.73vw), 2.38rem);
+  --space-xl: clamp(3rem, calc(2.78rem + 1.1vw), 3.56rem);
+  --space-2xl: clamp(4rem, calc(3.71rem + 1.46vw), 4.75rem);
+  --space-3xl: clamp(6rem, calc(5.56rem + 2.2vw), 7.13rem);
+
+  /* One-up pairs */
+  --space-3xs-2xs: clamp(0.25rem, calc(0.1rem + 0.73vw), 0.63rem);
+  --space-2xs-xs: clamp(0.5rem, calc(0.35rem + 0.73vw), 0.88rem);
+  --space-xs-s: clamp(0.75rem, calc(0.58rem + 0.85vw), 1.19rem);
+  --space-s-m: clamp(1rem, calc(0.68rem + 1.59vw), 1.81rem);
+  --space-m-l: clamp(1.5rem, calc(1.16rem + 1.71vw), 2.38rem);
+  --space-l-xl: clamp(2rem, calc(1.39rem + 3.05vw), 3.56rem);
+  --space-xl-2xl: clamp(3rem, calc(2.32rem + 3.41vw), 4.75rem);
+  --space-2xl-3xl: clamp(4rem, calc(2.78rem + 6.1vw), 7.13rem);
+
+  /* Font weights */
+  --font-weight-500: 500;
+  --font-weight-700: 700;
+  --font-weight-900: 900;
+
+  /* Colors */
+  --clr-primary-100: hsl(225, 100%, 94%);
+  --clr-primary-200: hsl(245, 75%, 52%);
+
+  --clr-neutral-100: hsl(225, 100%, 98%);
+  --clr-neutral-200: hsl(224, 23%, 55%);
+  --clr-neutral-300: hsl(223, 47%, 23%);
+}
+
+/* Global Styles */
+body {
+  font-family: "Red Hat Display", sans-serif;
+  font-size: var(--step--0);
+  color: var(--clr-neutral-200);
+  display: grid;
+  place-content: center;
+  padding-inline: var(--space-3xs-2xs);
+  background-image: url("./images/pattern-background-mobile.svg");
+  background-color: var(--clr-primary-100);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top;
+}
+
+@media screen and (min-width: 1000px) {
+  body {
+    background-image: url("./images/pattern-background-desktop.svg");
+    /* background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top; */
+  }
+}
+h1 {
+  color: var(--clr-neutral-300);
+  font-weight: var(--font-weight-900);
+  font-size: var(--step-2);
+}
+/* Composition  */
+.stack-2xs > * + * {
+  margin-top: var(--space-2xs-xs);
+}
+.stack-s > * + * {
+  margin-top: var(--space-s-m);
+}
+
+.stack-m > * + * {
+  margin-top: var(--space-m-l);
+}
+
+.stack-l > * + * {
+  margin-top: var(--space-l-xl);
+}
+
+.cluster {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-s);
+}
+
+/* Utility Classes */
+.text-align\:center {
+  text-align: center;
+}
+
+/* Blocks */
+.card {
+  min-width: 312px;
+  max-width: 500px;
+  background-color: white;
+  border-radius: var(--space-s-m);
+  overflow: hidden;
+}
+
+.card__content {
+  padding-block: var(--space-m-l);
+  padding-inline: var(--space-m-l);
+}
+
+.card__copy > p {
+  max-width: 28ch;
+  margin-inline: auto;
+}
+.card__menu {
+  background-color: var(--clr-neutral-100);
+  border-radius: var(--space-2xs);
+  padding-block: var(--space-s-m);
+  padding-inline: var(--space-s-m);
+}
+
+.card__menu > :nth-child(3) {
+  margin-left: auto;
+  font-weight: var(--font-weight-900);
+  color: var(--clr-primary-200);
+  transition: opacity 150ms ease-in-out, text-decoration 150ms ease-in-out;
+}
+
+.card__subscription > * {
+  display: block;
+}
+
+.card__subscription > :nth-child(1) {
+  font-weight: var(--font-weight-900);
+  color: var(--clr-neutral-300);
+}
+
+.card__cta > * {
+  display: block;
+  text-decoration: none;
+  color: var(--clr-neutral-200);
+  font-weight: var(--font-weight-700);
+  transition: color 150ms ease-in-out;
+}
+
+.card__cta > :nth-child(1) {
+  background-color: var(--clr-primary-200);
+  box-shadow: 0px 25px 15px 0px hsla(245, 75%, 52%, 0.2);
+  color: white;
+  padding-block: var(--space-xs-s);
+  border-radius: var(--space-xs);
+  transition: opacity 150ms ease-in-out;
+}
+
+.card__cta > :nth-child(1):hover,
+.card__menu > :nth-child(3):hover {
+  opacity: 0.6;
+  text-decoration: none;
+}
+
+.card__cta > :nth-child(2):hover {
+  color: var(--clr-neutral-300);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+/* Exceptions */
+.cluster[data-mod="cluster-flexstart"] {
+  justify-content: flex-start;
+}
